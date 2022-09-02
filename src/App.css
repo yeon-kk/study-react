@@ -36,3 +36,107 @@
     transform: rotate(360deg);
   }
 }
+
+.card {
+  width: 400px;
+  border-radius: 10px;
+  border: 0.0625rem solid #d7e2eb;
+  margin: 0 24px;
+}
+.thumbnail {
+  height: 160px;
+  width: 400px;
+  border-radius: 10px;
+}
+.thumbnail-img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.card-contents {
+  margin: 10px;
+  padding: 16px;
+  font-family: "Noto Sans KR";
+}
+.card-title {
+  font-weight: bold;
+  font-size: large;
+  height: 50px;
+  font-family: "Noto Sans KR";
+}
+.position-contents {
+  padding: 32px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  margin: 0 0 1rem 0;
+  font-family: "Noto Sans KR";
+}
+.position {
+  font-weight: bold;
+  background-color: #f0f5fa;
+  padding: 3px;
+  border-radius: 2px;
+  width: 30px;
+  font-size: small;
+  text-align: center;
+  font-family: "Noto Sans KR";
+}
+.status-contents {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  align-items: center;
+  margin: 0 0 1rem 0;
+  font-family: "Noto Sans KR";
+}
+.status {
+  font-weight: bold;
+  background-color: #f0f5fa;
+  padding: 3px;
+  border-radius: 2px;
+  width: 60px;
+  font-size: small;
+  text-align: center;
+  color: #27a965;
+  font-family: "Noto Sans KR";
+}
+.line {
+  background-color: #d7e2eb;
+  height: 1px;
+  margin: 10px;
+}
+.date {
+  color: #484848;
+  font-size: small;
+  margin: 0 0 20px;
+  font-family: "Noto Sans KR";
+}
+.testButton {
+  height: 2.875rem;
+  width: 100%;
+  font-size: small;
+  font-weight: bold;
+  border: 0.0625rem solid #d7e2eb;
+  border-radius: 5px;
+  background-color: #fbfbfd;
+  transition: all 400ms;
+  font-family: "Noto Sans KR";
+}
+
+.testButton:hover {
+  cursor: pointer;
+  background-color: #ececec;
+}
+
+.testButton:active {
+  background-color: red;
+}
+
+.testButton:focus {
+  background-color: #d7e2eb;
+}

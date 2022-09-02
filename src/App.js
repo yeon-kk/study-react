@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
-
+import axios from "axios";
+import "./App.css";
+import { Card } from "./components/Card.js";
+import { useState, useEffect } from "react";
 function App() {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/recruit")
+      .then((res) => {
+        const tmp = [...res.data];
+        setData(tmp);
+      })
+      .catch(() => {
+        console.log("실패");
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div>
+      <div>
+        <div
+          style={{
+            fontSize: "x-large",
+            fontWeight: "bold",
+            margin: "0 24px",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          잘나가는 개발자가 되어보세요.
+        </div>
+      </div>
+      <div style={{ fontweight: "bold", margin: "10px 24px" }}>
+        내가 접수한 채용 프로그램
+      </div>
+      <div style={{ display: "flex" }}>
+        {data.map((data, i) => {
+          return <Card data={data} />;
+        })}
+      </div>
     </div>
   );
 }
