@@ -2,14 +2,20 @@ import axios from "axios";
 import "./App.css";
 import { Card } from "./components/Card.js";
 import { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import Button from "react-bootstrap/Button";
+import { BtnModal } from "./components/Modal";
+
 function App() {
   const [data, setData] = useState([]);
+  const [modalShow, setModalShow] = useState(false);
   useEffect(() => {
     axios
       .get("http://localhost:3001/recruit")
       .then((res) => {
         const tmp = [...res.data];
         setData(tmp);
+        console.log(tmp);
       })
       .catch(() => {
         console.log("실패");
@@ -37,6 +43,11 @@ function App() {
           return <Card data={data} />;
         })}
       </div>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        모달창
+      </Button>
+
+      <BtnModal show={modalShow} onHide={() => setModalShow(false)} />
     </div>
   );
 }
